@@ -26,15 +26,13 @@ Some suggestions can be found below:
   --background-color: hsl(0, 0%, 98%);
   --element-color: hsl(0, 0%, 100%);
   --primary-color: hsl(200, 15%, 8%);
-  --box-shaddow:0rem 2px 1.2rem -4px rgba(0, 0, 0, 0.089) ;
+  --box-shaddow: 0rem 2px 1.2rem -4px rgba(0, 0, 0, 0.089);
 
-  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
 }
 
 [data-theme="dark"] {
@@ -42,8 +40,7 @@ Some suggestions can be found below:
   --background-color: hsl(207, 26%, 17%);
   --element-color: hsl(209, 23%, 22%);
   --primary-color: hsl(0, 0%, 100%);
-  --box-shaddow:0rem 2px 1.2rem -4px rgba(0, 0, 0, 0.452) ;
-
+  --box-shaddow: 0rem 2px 1.2rem -4px rgba(0, 0, 0, 0.452);
 }
 
 *,
@@ -72,24 +69,21 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
-  
 }
 
-
-.app-container{
+.app-container {
   width: 100vw;
   background-color: var(--background-color);
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 
   overflow: hidden;
   margin-inline: auto;
-  
 }
-.app{
+.app {
   max-width: 144rem;
-  box-shadow: var(--box-shaddow)
+  box-shadow: var(--box-shaddow);
 }
 
 /* ====== TYPO ====== */
@@ -133,9 +127,9 @@ p.detail {
 }
 
 /* ====== HEADER ====== */
-.header{
-  display:flex;
-  justify-content:space-between;
+.header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: var(--element-color);
 
@@ -146,99 +140,125 @@ p.detail {
 
 /* ====== FILTER ====== */
 
-.filters{
-  display:flex;
+.filters {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
-
 /* ====== MAIN Home ====== */
-.main-container{
+.main-container {
   background-color: var(--background-color);
   height: 100vh;
-  display:flex;
+  display: flex;
   padding: 4.8rem 8rem;
   flex-direction: column;
   gap: 4.8rem;
   z-index: -10;
-  box-shadow: 0 -5px 2px -3px rgba(0, 0, 0, 0.178), 0 5px 3px -3px rgb(243, 48, 48);
+  box-shadow: 0 -5px 2px -3px rgba(0, 0, 0, 0.178),
+    0 5px 3px -3px rgb(243, 48, 48);
 }
 
-
-.result-grid{
+.result-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   align-items: center;
-  justify-items:center;
+  justify-items: center;
   gap: 7.5rem;
   width: 100%;
   z-index: 10;
 }
 
-
-
-.country-box{
+.country-box {
   height: 33.5rem;
   width: 26.4rem;
   background-color: var(--element-color);
   cursor: pointer;
   box-shadow: var(--box-shaddow);
 }
-.box__flag{
+.box__flag {
   width: 100%;
   height: 16rem;
 }
 
-.box__info{
+.box__info {
   width: 100%;
   padding: 2.4rem;
-  display:flex;
+  display: flex;
   justify-content: left;
   align-items: baseline;
   flex-direction: column;
-  
 }
-.box__info-name{
+.box__info-name {
   padding-bottom: 1.6rem;
 }
-.box__info-data:not(:last-child){
+.box__info-data:not(:last-child) {
   padding-bottom: 0.8rem;
 }
 /* ====== MAIN Detail ====== */
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+.container-onfocus {
+  width: 100vw;
+  height: 50vh;
 }
-a:hover {
-  color: #535bf2;
+.onfocus {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translatex(-49%);
+  max-width: 144rem;
+  width: 100%;
+  background-color: var(--background-color);
+  padding: 8rem;
+}
+
+.grid-detail {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  align-items: center;
+  justify-items: center;
+}
+
+.left-detail {
+  width: 40rem;
+  height: 35rem;
+}
+
+.right-detail {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  align-items: top;
+  justify-items: center;
+  gap: 1.6rem;
+}
+.detail-title {
+  grid-column: 1/-1;
+  align-self: left;
+  justify-self: left;
+  padding-bottom: 1.6rem;
 }
 
 button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+
+  background-color: var(--element-color);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: transform 0.25s;
+  font-family: var(--font-family);
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.6rem;
+  color: var(--text-color);
 }
 button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transform: scale(1.1);
 }
 
 /* === Search Bar === */
-
 
 .searchBar {
   background-color: var(--element-color);
@@ -250,7 +270,7 @@ button:focus-visible {
   gap: 2rem;
   border: solid 0px var(--text-color);
   width: 48rem;
-  padding-left: 1.6rem ;
+  padding-left: 1.6rem;
 }
 
 .searchInput,
@@ -282,7 +302,7 @@ button:focus-visible {
 }
 
 /* === Nightmode btn === */
-.selectOption{
+.selectOption {
   background-color: var(--element-color);
   color: var(--text-color);
   font-family: var(--font-family);
@@ -298,11 +318,10 @@ button:focus-visible {
   border: none;
 }
 
-
 /* === Nightmode btn === */
-.night-mode-switcher{
+.night-mode-switcher {
   display: flex;
-  gap: 2rem
+  gap: 2rem;
 }
 
 .switch {
@@ -366,17 +385,15 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.button-subtext{
-  display:flex;
+.button-subtext {
+  display: flex;
   justify-content: left;
   align-items: center;
-  gap:1rem;
+  gap: 1rem;
 }
-
 
 /* === utillities */
 
-.u-bold{
+.u-bold {
   font-weight: 600;
-
 }

@@ -36,4 +36,4 @@ Users should be able to:
 In order to finish the Challenge in a short time i neglated some optimization:
 
 - Small screen size not optimized
-- Search by region could be done in a fastes way, the Api provided a speciale URl for regional filter. I didn't use it, i used a "cheapest" way to do it in a React component, it could make the app slower.
+- Search by region or by name could be done in a fastes way, the Api provided a speciale URl for regional filter and single city search. I didn't use any of them to get a faster result, i used a "cheapest" way to do it in a React component, howerver it could make the app slower.

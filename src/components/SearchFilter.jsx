@@ -1,17 +1,13 @@
 import { useState } from "react";
 function SearchFilter({setSearch}){
     const [searchText, setSearchText] = useState("");
-    const [error, setError] = useState(false);
   
     function handleSearch(event) {
       const searchWord = event.target.value;
   
-      if (event.key === "Enter" && searchWord != "") {
-        setError(false);
+      if (event.key === "Enter") {
+
         setSearch(searchWord);
-      }
-      if (event.key === "Enter" && searchWord == "") {
-        setError(true);
       }
     }
   
@@ -21,7 +17,7 @@ function SearchFilter({setSearch}){
   
     return (
       <>
-        <div className={`searchBar  ${error ? "searchError" : ""}`}>
+        <div className={`searchBar`}>
         <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
@@ -46,11 +42,7 @@ function SearchFilter({setSearch}){
             onKeyDown={handleSearch}
           />
         </div>
-        {error && (
-          <span className="errorMessage">
-            Opss! this filed should not be empty...
-          </span>
-        )}
+
       </>
     );
 }

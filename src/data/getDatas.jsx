@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useCallback, useContext, useEffect, useReducer } from "react";
 
 const AppContext = createContext();
 
@@ -23,12 +23,11 @@ function reducer(state, action) {
   }
 }
 
-function MyProvider({ country, children }) {
+function MyProvider({children }) {
   const [{ countriesDatas, isLoading, error }, dispatch] = useReducer(
     reducer,
     initialState
   );
-    console.log("country:", country, "region:", region)
 
   useEffect(() => {
     async function getCountriesData() {
@@ -49,8 +48,6 @@ function MyProvider({ country, children }) {
     }
     getCountriesData();
   }, []);
-
-
 
   return (
     <AppContext.Provider value={{ countriesDatas, isLoading, error }}>

@@ -1,28 +1,44 @@
 import { useCountry } from "../data/getDatas";
+import CountryBox from "./CountryBox";
+import { useState } from "react";
+import OnFocusCountry from "./OnFocusCountry";
 
-function CountryResult() {
+function CountryResult({ region, search }) {
+  const [isSelected, setIsSelected] = useState("");
   const { countriesDatas } = useCountry();
+  // all
+  return countriesDatas.map((country) => {
+    // Filter By region 
+    if (region != "" && country.region != region) {
+      return;
+    }
 
-  return countriesDatas.map((country) => (
-    <div key={country.name.common} className="country-box">
-      <div className="box__flag">{country.flag}</div>
-      <div className="box__info">
-        <h3 className="box__info-name">{country.name.common}</h3>
-        <p className="home box__info-data">
-          <span className="u-bold">Population: </span>
-          {new Intl.NumberFormat("de-DE").format(country.population)}
-        </p>
-        <p className="home box__info-data">
-          <span className="u-bold">Region: </span>
-          {country.region}
-        </p>
-        <p className="home box__info-data">
-          <span className="u-bold">Capital: </span>
-          {country.capital}
-        </p>
-      </div>
-    </div>
-  ));
+    // Filter by search
+    if (
+      search != "" &&
+      country.name.common.toLowerCase() != search.toLowerCase()
+    ) {
+      return;
+
+    } 
+
+    // Focus on a country
+    if(isSelected != "" && isSelected == country.name.common){
+      return <OnFocusCountry key={country.name.official} country={country} setIsSelected={setIsSelected}/>
+    }
+
+    // Return the element
+    else {
+      return (
+        <CountryBox
+          key={country.name.official}
+          country={country}
+          isSelected={isSelected}
+          setIsSelected={setIsSelected}
+        />
+      );
+    }
+  });
 }
 
 export default CountryResult;
