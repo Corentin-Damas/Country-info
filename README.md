@@ -6,8 +6,6 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 ![](./design/desktop-preview.jpg)
 
-
-
 ### The challenge
 
 Users should be able to:
@@ -17,13 +15,12 @@ Users should be able to:
 - Filter countries by region
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
-- Toggle the color scheme between light and dark mode *(optional)*
+- Toggle the color scheme between light and dark mode _(optional)_
 - The country flags will be pulled from the [REST Countries API](https://restcountries.com)
 
 ### Screenshot
 
 ![](./screenshot.jpg)
-
 
 ## My process
 
@@ -33,3 +30,10 @@ Users should be able to:
 - CSS custom properties
 - API calls
 - [React](https://reactjs.org/) - JS library
+
+### Possible optimization
+
+In order to finish the Challenge in a short time i neglated some optimization:
+
+- Small screen size not optimized
+- Search by region could be done in a fastes way, the Api provided a speciale URl for regional filter. I didn't use it, i used a "cheapest" way to do it in a React component, it could make the app slower.

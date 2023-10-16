@@ -23,12 +23,13 @@ function reducer(state, action) {
   }
 }
 
-function MyProvider({ search, children }) {
+function MyProvider({ country, children }) {
   const [{ countriesDatas, isLoading, error }, dispatch] = useReducer(
     reducer,
     initialState
   );
-  //   console.log(search)
+    console.log("country:", country, "region:", region)
+
   useEffect(() => {
     async function getCountriesData() {
       dispatch({ type: "loading" });
@@ -47,7 +48,10 @@ function MyProvider({ search, children }) {
       }
     }
     getCountriesData();
-  }, [search]);
+  }, []);
+
+
+
   return (
     <AppContext.Provider value={{ countriesDatas, isLoading, error }}>
       {children}

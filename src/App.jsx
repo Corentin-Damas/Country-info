@@ -4,14 +4,21 @@ import Header from "./components/Header";
 import Countries from "./components/Counties";
 
 function App() {
-  const [search, setSearch] = useState("Venezuela");
+  const [isNightActive, setIsNightActive] = useState(false);
+  const [search, setSearch] = useState("");
+  const [region, setRegion] =useState('')
 
   return (
     <>
-      <div>
-        <MyProvider search={search}>
-          <Header/>
-          <Countries/>
+      <div className="app-container" data-theme={isNightActive ? "dark" : ""}>
+        <MyProvider country={search}>
+          <div className="app">
+            <Header
+              isNightActive={isNightActive}
+              setIsNightActive={setIsNightActive}
+            />
+            <Countries setRegion={setRegion} setSearch={setSearch} />
+          </div>
         </MyProvider>
       </div>
     </>
