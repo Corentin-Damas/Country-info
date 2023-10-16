@@ -24,7 +24,9 @@ function OnFocusCountry({ country, setIsSelected }) {
       <div className="onfocus">
         <button className="btn-return" onClick={handleOnClick}>&larr; Back</button>
         <div className="grid-detail">
-          <div className="left-detail">{country.flag}</div>
+          <div className="left-detail">
+            <img src={country.flags.svg} alt="country flag" />
+            </div>
           <div className="right-detail">
             <h1 className="detail-title">{country.name.common}</h1>
             <div className="col-1">

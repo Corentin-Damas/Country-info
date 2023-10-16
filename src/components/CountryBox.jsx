@@ -10,7 +10,7 @@ function CountryBox({ country, isSelected, setIsSelected }) {
     <>
       {!isSelected && (
         <div className="country-box" onClick={handleOnClick}>
-          <div className="box__flag">{country.flag}</div>
+          <div className="box__flag"><img src={country.flags.svg} alt="country flag" /></div>
           <div className="box__info">
             <h3 className="box__info-name">{country.name.common}</h3>
             <p className="home box__info-data">
