@@ -242,6 +242,9 @@ p.detail {
   justify-self: left;
   padding-bottom: 1.6rem;
 }
+.borders{
+  justify-self: left;
+}
 
 button {
   border-radius: 8px;

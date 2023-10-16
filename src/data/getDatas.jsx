@@ -33,8 +33,8 @@ function MyProvider({children }) {
     async function getCountriesData() {
       dispatch({ type: "loading" });
       try {
-        const res = await fetch(`https://restcountries.com/v3.1/all`);
-        // const res = await fetch(`http://localhost:9000/data`);
+        // const res = await fetch(`https://restcountries.com/v3.1/all`);
+        const res = await fetch(`http://localhost:9000/data`);
         if (!res.ok) throw Error("Failed getting data");
         const data = await res.json();
         // console.log(data)

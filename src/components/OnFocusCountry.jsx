@@ -18,6 +18,11 @@ function OnFocusCountry({ country, setIsSelected }) {
     const lanRefact = languages[Object.keys(languages)];
     return lanRefact;
   }
+  function getBorders(listBorder){
+    return listBorder.toString()
+
+  }
+  
 
   return (
     <div className="container-onfocus">
@@ -65,6 +70,10 @@ function OnFocusCountry({ country, setIsSelected }) {
                 {getLanguage(country.languages)}
               </p>
             </div>
+            <p className="detail borders">
+            <span className="u-bold">Border Countries: </span>
+            {getBorders(country.borders)}
+            </p>
           </div>
         </div>
       </div>

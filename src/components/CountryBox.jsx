@@ -26,6 +26,7 @@ function CountryBox({ country, isSelected, setIsSelected }) {
               {country.capital}
             </p>
           </div>
+
         </div>
       )}
       {}
